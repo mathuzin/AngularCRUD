@@ -20,7 +20,7 @@
 
         <mat-cell *matCellDef="let course" class="action-column">
           <button mat-mini-fab color="accent" aria-label="Editar curso">
-            <mat-icon>edit</mat-icon>
+            <mat-icon (click)="onEdit(course)">edit</mat-icon>
           </button>
 
             <button mat-mini-fab color="accent" aria-label="Remover um curso">
