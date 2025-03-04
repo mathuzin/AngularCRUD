@@ -8,12 +8,17 @@ import { CoursesComponent } from './courses/courses.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { CoursesService } from './services/courses.service';
+import { CoursesListComponent } from "./courses-list/courses-list.component";
+import { RouterModule } from '@angular/router';
+import { routes } from '../app.routes';
 
 
 @NgModule({
   declarations: [
     CoursesComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    CoursesListComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +26,15 @@ import { CourseFormComponent } from './course-form/course-form.component';
     AppMaterialModule,
     SharedModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+],
+  providers: [
+    CoursesService,
+  ],
+  exports: [
+    CoursesComponent,
+    CourseFormComponent,
+    CoursesListComponent
   ]
 })
 export class CoursesModule { }
