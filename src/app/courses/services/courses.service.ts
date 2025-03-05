@@ -43,5 +43,9 @@ private readonly API = 'api/courses';
     .pipe(first());
   }
 
+  remove(id: string) {
+    return this.httpClient.delete<Course>(`${this.API}/${id}`).pipe(first());
+  }
+
 
 }
